@@ -1,0 +1,38 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "trying my best over here",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzatalha77/api-upload-image.git"
+  },
+  "author": "hamza talha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzatalha77/api-upload-image/issues"
+  },
+  "homepage": "https://github.com/hamzatalha77/api-upload-image#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.1.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
+  }
+}
