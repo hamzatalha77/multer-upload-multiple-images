@@ -38,8 +38,11 @@ const upload = multer({
 router.post('/', upload, (req, res) => {
   console.log('req.body:', req.body)
   console.log('req.files:', req.files)
-  const filePaths = req.files.map((file) => `/${file.path}`)
-  res.json(filePaths)
+  const fileUrls = req.files.map(
+    (file) => `${req.protocol}://${req.get('host')}/${file.path}`
+  )
+
+  res.json(fileUrls)
 })
 
 export default router

@@ -51,7 +51,7 @@ const PortfolioCreateScreen = () => {
             'Content-Type': 'multipart/form-data'
           }
         }
-        await axios.post('/api/upload', formData, config)
+        // await axios.post('/api/upload', formData, config)
         const { data } = await axios.post('/api/upload', formData, config)
 
         setImages(data) // data should be an array of image file paths
