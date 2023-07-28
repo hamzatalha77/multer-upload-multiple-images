@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import path from 'path'
 import express from 'express'
 import connectDB from './config/db.js'
+import bodyParser from 'body-parser'
 import colors from 'colors'
 import portfolioRoutes from './routes/portfolioRoutes.js'
 import { errorHandler, notFound } from './middleware/errorMiddleWare.js'
@@ -14,6 +15,8 @@ connectDB()
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api/portfolios', portfolioRoutes)
 app.use('/api/upload', uploadRoutes)
